@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+    <script src="./bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> -->
+    <link rel="stylesheet" href="./Weather.css">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <div id="primaryContainer" class="container-fluid">
+            <div id="topBar" class="row align-items-center py-2 shadow-lg">
+                <div id="collapseButt" class="col">
+                    <input type="text" class="form-control" placeholder="Search city...">
+                </div>
+                <div id="titleLogo" class="col text-white fs-5">Simozy 
+                    <img src="./Icons/weather-lightning.svg" alt="" width="30px">
+                </div>
+                <div id="optionButt" class="col fs-6 text-white" type="button" onclick="darkMode()">Dark Mode</div>
+            </div>
+
+            <div id="weatherImg" class="mt-5">
+                <img src="./Icons/weather-icon.svg" alt="" width="230px">
+            </div>
+            <div id="deg" class="mt-5 ">
+                <span id="degContent" class="">21°</span>
+                <span id="icon"></span>
+            </div>
+            <p id="Thunderstorm" class="shadow mb-4 mx-5">Thunderstorm</p>
+        </div>
+    </center>
+    <center class="row mx-0 py-3 container-fluid">
+        <div class="col-3 container-fluid">
+            <div id="secondaryContainer" class="p-2">
+                <strong class="text-white">USA</strong>
+                <div id="weatherImg" class="">
+                    <img src="./Icons/weather-icon.svg" alt="" width="30px">
+                </div>
+                <div id="deg" class="mt-2">
+                    <span class="">21°</span>
+                    <span id="icon"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div id="secondaryContainer" class="p-2">
+                <strong class="text-white">GER</strong>
+                <div id="weatherImg" class="">
+                    <img src="./Icons/weather-icon.svg" alt="" width="30px">
+                </div>
+                <div id="deg" class="mt-2">
+                    <span class="">21°</span>
+                    <span id="icon"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div id="secondaryContainer" class="p-2">
+                <strong class="text-white">RUS</strong>
+                <div id="weatherImg" class="">
+                    <img src="./Icons/weather-icon.svg" alt="" width="30px">
+                </div>
+                <div id="deg" class="mt-2">
+                    <span class="">21°</span>
+                    <span id="icon"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div id="secondaryContainer" class="p-2">
+                <strong class="text-white">JAP</strong>
+                <div id="weatherImg" class="">
+                    <img src="./Icons/weather-icon.svg" alt="" width="30px">
+                </div>
+                <div id="deg" class="mt-2">
+                    <span class="">21°</span>
+                    <span id="icon"></span>
+                </div>
+            </div>
+        </div>
+       
+    </center>
+
+
+
+    <script>
+        // let key = "da3711b723f694ec77142d83dc922bc8"
+
+        let weatheraURL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=da3711b723f694ec77142d83dc922bc8"
+        const getWeatherData = async ()=> {
+            let collectedData = await fetch(weatheraURL)
+            let convertedCollectedData = await collectedData.json()
+            console.log(convertedCollectedData);
+            for (let index = 0; index < convertedCollectedData.length; index++) {
+                input.value += `
+                ${convertedCollectedData[index].dt}
+                `
+            // console.log(collectedData)
+            }
+        }
+ 
+        function darkMode() {
+        var element = document.body;
+        if (optionButt.innerText == "Dark Mode") {
+            optionButt.innerText ="Day Mode"
+        }else {
+            optionButt.innerText ="Dark Mode"
+        }
+        element.classList.toggle("dark-mode");
+        }
+
+
+    // let url = "https://jsonplaceholder.typicode.com/users"
+    // let url2 = "https://api.github.com/users"
+    // const getData = async ()=> {
+    //     let response = await fetch(url2)
+    //     let convertedResponse = await response.json()
+    //     console.log(convertedResponse);
+    //      for (let index = 0; index < convertedResponse.length; index++) {
+    //             disp.innerHTML += `
+    //             <h1>${convertedResponse[index].login}</h1>
+    //             <img src="${convertedResponse[index].avatar_url}"/>
+    //             `
+    //         }
+    // }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid gold; */
+}
+
+.dark-mode {
+    background-color: black;
+}
+.dark-mode-two {
+    background-image: none;
+}
+
+#primaryContainer {
+    /* background-image: url(1w.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; */
+    border-bottom: 10px solid rgba(19,181,240);
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    filter: drop-shadow(0px 0px 10px rgba(71, 126, 210, 0.291));
+}
+
+#topBar {
+    background-image:url(./Icons/ff.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#weatherImg {
+    filter: drop-shadow(10px 10px 30px rgba(2, 196, 255, 0.444));
+}
+
+#deg {
+    font-family: cursive;
+    font-size: 7em;
+    color: rgb(19,181,240);
+    font-weight:700;
+    /* filter: drop-shadow(2px 2px 2px rgb(255, 234, 0)); */
+    border-radius: 50px;
+}
+
+#deg #icon {
+    font-weight:10;
+    font-family:'Segoe UI',serif;
+    margin-left: -50px;
+}
+
+#Thunderstorm {
+    color: rgb(19,181,240);
+    border-radius: 50px;
+    font-size:1em;
+}
+
+#secondaryContainer {
+    background-image: url(./Icons/ff.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    border-radius: 60px;
+    filter: drop-shadow(0px 0px 10px rgba(71, 126, 210, 0.291));
+    /* width: 70px; */
+    /* height: 90px; */
+}
+
+#secondaryContainer #weatherImg {
+    filter: drop-shadow(10px 10px 30px white);
+}
+
+#secondaryContainer #deg {
+    font-family: cursive;
+    font-size: 1em;
+    color: rgb(253, 253, 253);
+    font-weight:700;
+}
+
+#secondaryContainer #deg #icon {
+    /* font-weight:10; */
+    /* font-family:'Segoe UI',serif; */
+    margin-left: -7px;
+}
