@@ -11,16 +11,42 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="mySidenav" class="sidenav">
+        <div class="dropdown ms-2">
+            <button onclick="dropDown()" class="dropbtn btn btn-success mb-2">Search City</button>
+            <div id="myDropdown" class="dropdown-content">
+              <input type="text" class="form-control border" placeholder="Quick Search..." id="myInput" onkeyup="filterFunction()">
+              <span href="#about">About</span>
+              <span href="#about">Nigeria</span>
+              <span href="#about">Lagos</span>
+              <span href="#about">Abuja</span>
+              <span href="#about">Ph</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+              <span href="#about">About</span>
+            </div>
+          </div>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      </div>
     <center>
         <div id="primaryContainer" class="container-fluid">
             <div id="topBar" class="row align-items-center py-2 shadow-lg">
                 <div id="collapseButt" class="col">
-                    <input type="text" class="form-control" placeholder="Search city...">
+                    <span type="button" class="text-white" onclick="openNav()">&#9776; Search City</span>
                 </div>
-                <div id="titleLogo" class="col text-white fs-5">Simozy 
+                
+                <div id="titleLogo" class="col text-white fs-5">Simozy
                     <img src="./Icons/weather-lightning.svg" alt="" width="30px">
                 </div>
-                <div id="optionButt" class="col fs-6 text-white" type="button" onclick="darkMode()">Dark Mode</div>
+                <div id="optionButt" class="col text-white" type="button" onclick="darkMode()">Dark Mode</div>
             </div>
 
             <div id="weatherImg" class="mt-5">
@@ -88,20 +114,84 @@
 
 
     <script>
-        // let key = "da3711b723f694ec77142d83dc922bc8"
-
-        let weatheraURL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=da3711b723f694ec77142d83dc922bc8"
-        const getWeatherData = async ()=> {
-            let collectedData = await fetch(weatheraURL)
-            let convertedCollectedData = await collectedData.json()
-            console.log(convertedCollectedData);
-            for (let index = 0; index < convertedCollectedData.length; index++) {
-                input.value += `
-                ${convertedCollectedData[index].dt}
-                `
-            // console.log(collectedData)
-            }
+        let cityName = cityName.innerText
+        let key = "da3711b723f694ec77142d83dc922bc8"
+        let wetherURL = `
+        https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}
+        `
+        const fetchData = async()=> {
+            let response = await fetch(wetherURL)
+            let convertedResponse = await response.json()
+            console.log(convertedResponse)
+            // convertedResponse.map((eachItem)=> {
+            //     console.log(eachItem.name)
+            // })
         }
+
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "310px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        function dropDown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            span = div.getElementsByTagName("span");
+            for (i = 0; i < span.length; i++) {
+                txtValue = span[i].textContent || span[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                span[i].style.display = "";
+                } else {
+                span[i].style.display = "none";
+                }
+            }
+            }
+
+        // fetchData()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // const getWeatherData = async ()=> {
+        //     let collectedData = await fetch(endpoint)
+        //     let convertedCollectedData = await collectedData.json()
+        //     console.log(convertedCollectedData);
+        //     for (let index = 0; index < convertedCollectedData.length; index++) {
+        //         input.value += `
+        //         ${convertedCollectedData[index].dt}
+        //         `
+        //     console.log(collectedData)
+        //     }
+        // }
  
         function darkMode() {
         var element = document.body;
@@ -114,19 +204,6 @@
         }
 
 
-    // let url = "https://jsonplaceholder.typicode.com/users"
-    // let url2 = "https://api.github.com/users"
-    // const getData = async ()=> {
-    //     let response = await fetch(url2)
-    //     let convertedResponse = await response.json()
-    //     console.log(convertedResponse);
-    //      for (let index = 0; index < convertedResponse.length; index++) {
-    //             disp.innerHTML += `
-    //             <h1>${convertedResponse[index].login}</h1>
-    //             <img src="${convertedResponse[index].avatar_url}"/>
-    //             `
-    //         }
-    // }
     </script>
     
 </body>
