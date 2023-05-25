@@ -13,11 +13,6 @@
 }
 
 #primaryContainer {
-    /* background-image: url(1w.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; */
     border-bottom: 10px solid rgba(19,181,240);
     border-bottom-left-radius: 70px;
     border-bottom-right-radius: 70px;
