@@ -46,10 +46,10 @@
   }
   
 .sidenav a {
-padding: 8px 8px 8px 32px;
+padding: 10px 8px 8px 32px;
 text-decoration: none;
 font-size: 25px;
-color: rgb(19,181,240);
+color: rgb(240, 19, 19);
 display: block;
 transition: 0.3s;
 }
@@ -67,14 +67,34 @@ margin-left: 50px;
 }
 
 .dropbtn {
-background-color: #4CAF50;
+background-color: rgba(19,181,240);
 color: white;
-padding: 5px 80px;
+padding: 5px 130px 5px 80px;
 font-size: 16px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-background-color: #3e8e41;
+background-color: #13b5f0;
+color: #ffffff;
+}
+
+#selectedDistrict {
+    border-radius: 10px;
+}
+
+.select-something {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#myForm select {
+    background-color: rgba(0, 0, 0, 0.086);
+    color: white;
+}
+#myForm option {
+    background-color: rgba(0, 0, 0, 0.086);
+    /* margin-left: 20px; */
+    color: white;
 }
 
 #myInput {
@@ -94,7 +114,7 @@ padding: 14px 20px 12px 45px;
 }
 
 .dropdown-content {
-  display: none;
+  /* display: none; */
   position: absolute;
   min-width: 270px;
   overflow: auto;
