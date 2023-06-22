@@ -1,220 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css" />
     <script src="./bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> -->
-    <link rel="stylesheet" href="./Weather.css">
+    <link rel="stylesheet" href="./Weather.css" />
     <script src="./Country+State+District-City-Data.js"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="mySidenav" class="sidenav">
-        <div class="dropdown ms-2">
-            <button class="dropbtn btn mb-2">SIMOZY ©️</button>
-            <div id="myDropdown" class="dropdown-content">
-              <!-- <input type="text" class="form-control border" placeholder="Quick Search..." id="myInput" onkeyup="filterFunction()"> -->
+      <div class="dropdown ms-2">
+        <button class="dropbtn btn mb-2">SIMOZY ©️</button>
+        <div id="myDropdown" class="dropdown-content">
+          <!-- <input type="text" class="form-control border" placeholder="Quick Search..." id="myInput" onkeyup="filterFunction()"> -->
 
-              <form name="myform" id="myForm">
-                <div class="select-something border border-primary">
-                    <!-- <span class="text-white">Select Country:</span> -->
-                    <select name="state" id="countySel" size="6" class="form-control border-0">
-                        <option value="" selected="selected" class="form-control border-0 shadow ps-0">SELECT COUNTRY</option>
-                    </select>
-                </div>
-                <div class="select-something border border-primary">
-                    <!-- <span class="text-white">State:</span>  -->
-                    <select name="countrya" id="stateSel" size="4" class="form-control border-0">
-                        <option value="" selected="selected" class="form-control border-0 shadow ps-0">SELECT STATE</option>
-                    </select>
-                </div>
-                <div class="select-something border border-primary">
-                    <!-- <span class="text-white">District/City: </span> -->
-                    <select name="district" id="districtSel" size="4" class="form-control border-0" onclick="displaySelectedDistrict()">
-                        <option id="district" value="" selected="selected" class="form-control border-0 shadow ps-0">SELECT DISTRICT</option>
-                    </select>
-                </div>
-                <input class="submited btn btn-success form-control mt-3" type="submit" onclick="">
-              </form>
+          <form name="myform" id="myForm">
+            <div class="select-something border border-primary">
+              <!-- <span class="text-white">Select Country:</span> -->
+              <select
+                name="state"
+                id="countySel"
+                size="6"
+                class="form-control border-0"
+              >
+                <option
+                  value=""
+                  selected="selected"
+                  class="form-control border-0 shadow ps-0"
+                >
+                  SELECT COUNTRY
+                </option>
+              </select>
             </div>
-          </div>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      </div>
-    <center>
-        <div id="primaryContainer" class="container-fluid">
-            <div id="topBar" class="row align-items-center py-2 shadow-lg">
-                <div id="collapseButt" class="col">
-                    <span type="button" class="text-white" onclick="openNav()">&#9776; Search City</span>
-                </div>
-                
-                <div id="titleLogo" class="col text-white fs-5">Simozy
-                    <img src="./Icons/weather-lightning.svg" alt="" width="30px">
-                </div>
-                <div id="optionButt" class="col text-white" type="button" onclick="darkMode()">Dark Mode</div>
+            <div class="select-something border border-primary">
+              <!-- <span class="text-white">State:</span>  -->
+              <select
+                name="countrya"
+                id="stateSel"
+                size="4"
+                class="form-control border-0"
+              >
+                <option
+                  value=""
+                  selected="selected"
+                  class="form-control border-0 shadow ps-0"
+                >
+                  SELECT STATE
+                </option>
+              </select>
             </div>
-            <div id="selectedDistrict" class="mt-1 shadow border text-primary mx-5"><b>Ogbomoso</b></div>
-            <div id="weatherImg" class="mt-4">
-                <img src="./Icons/weather-icon.svg" alt="" width="230px">
+            <div class="select-something border border-primary">
+              <!-- <span class="text-white">District/City: </span> -->
+              <select
+                name="district"
+                id="districtSel"
+                size="4"
+                class="form-control border-0"
+                onclick="getDestrict()"
+              >
+                <option
+                  id="district"
+                  value=""
+                  selected="selected"
+                  class="form-control border-0 shadow ps-0"
+                >
+                  SELECT DISTRICT
+                </option>
+              </select>
             </div>
-            <div id="deg" class="mt-5 ">
-                <span id="degContent" class="">21°</span>
-                <span id="icon"></span>
-            </div>
-            <p id="Thunderstorm" class="shadow mb-4 mx-5">Thunderstorm</p>
+          </form>
+          <button
+            class="btn btn-success form-control mt-3"
+          >
+            Get Data
+          </button>
         </div>
+      </div>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+    </div>
+    <center>
+      <div id="primaryContainer" class="container-fluid">
+        <div id="topBar" class="row align-items-center py-2 shadow-lg">
+          <div id="collapseButt" class="col">
+            <span type="button" class="text-white" onclick="openNav()"
+              >&#9776; Search City</span
+            >
+          </div>
+
+          <div id="titleLogo" class="col text-white fs-5">
+            Simozy
+            <img src="./Icons/weather-lightning.svg" alt="" width="30px" />
+          </div>
+          <div
+            id="optionButt"
+            class="col text-white"
+            type="button"
+            onclick="darkMode()"
+          >
+            Dark Mode
+          </div>
+        </div>
+        <div class="mt-1 shadow border text-primary mx- p-2 display-6">
+          <b id="displaySelectedDistrict">Ogbomoso</b>
+        </div>
+        <div id="weatherImg" class="mt-4">
+          <img src="./Icons/weather-icon.svg" alt="" width="230px" />
+        </div>
+        <div id="deg" class="mt-5">
+          <span id="degContent" class="">21°</span>
+          <span id="icon"></span>
+        </div>
+        <p id="Thunderstorm" class="shadow mb-4 mx-5">Thunderstorm</p>
+      </div>
     </center>
     <center class="row mx-0 py-3 container-fluid">
-        <div class="col-3 container-fluid">
-            <div id="secondaryContainer" class="p-2">
-                <strong class="text-white">USA</strong>
-                <div id="weatherImg" class="">
-                    <img src="./Icons/weather-icon.svg" alt="" width="30px">
-                </div>
-                <div id="deg" class="mt-2">
-                    <span class="">21°</span>
-                    <span id="icon"></span>
-                </div>
-            </div>
+      <div class="col-3 container-fluid">
+        <div id="secondaryContainer" class="p-2">
+          <strong class="text-white">USA</strong>
+          <div id="weatherImg" class="">
+            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
+          </div>
+          <div id="deg" class="mt-2">
+            <span class="">21°</span>
+            <span id="icon"></span>
+          </div>
         </div>
-        <div class="col-3">
-            <div id="secondaryContainer" class="p-2">
-                <strong class="text-white">GER</strong>
-                <div id="weatherImg" class="">
-                    <img src="./Icons/weather-icon.svg" alt="" width="30px">
-                </div>
-                <div id="deg" class="mt-2">
-                    <span class="">21°</span>
-                    <span id="icon"></span>
-                </div>
-            </div>
+      </div>
+      <div class="col-3">
+        <div id="secondaryContainer" class="p-2">
+          <strong class="text-white">GER</strong>
+          <div id="weatherImg" class="">
+            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
+          </div>
+          <div id="deg" class="mt-2">
+            <span class="">21°</span>
+            <span id="icon"></span>
+          </div>
         </div>
-        <div class="col-3">
-            <div id="secondaryContainer" class="p-2">
-                <strong class="text-white">RUS</strong>
-                <div id="weatherImg" class="">
-                    <img src="./Icons/weather-icon.svg" alt="" width="30px">
-                </div>
-                <div id="deg" class="mt-2">
-                    <span class="">21°</span>
-                    <span id="icon"></span>
-                </div>
-            </div>
+      </div>
+      <div class="col-3">
+        <div id="secondaryContainer" class="p-2">
+          <strong class="text-white">RUS</strong>
+          <div id="weatherImg" class="">
+            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
+          </div>
+          <div id="deg" class="mt-2">
+            <span class="">21°</span>
+            <span id="icon"></span>
+          </div>
         </div>
-        <div class="col-3">
-            <div id="secondaryContainer" class="p-2">
-                <strong class="text-white">JAP</strong>
-                <div id="weatherImg" class="">
-                    <img src="./Icons/weather-icon.svg" alt="" width="30px">
-                </div>
-                <div id="deg" class="mt-2">
-                    <span class="">21°</span>
-                    <span id="icon"></span>
-                </div>
-            </div>
+      </div>
+      <div class="col-3">
+        <div id="secondaryContainer" class="p-2">
+          <strong class="text-white">JAP</strong>
+          <div id="weatherImg" class="">
+            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
+          </div>
+          <div id="deg" class="mt-2">
+            <span class="">21°</span>
+            <span id="icon"></span>
+          </div>
         </div>
-       
+      </div>
     </center>
 
-
-
     <script>
-        let district = district.innerText
-        let cityName = cityName.innerText
-        let key = "da3711b723f694ec77142d83dc922bc8"
+      const getDestrict = () => {
+        let selectElement = document.getElementById("districtSel");
+        displaySelectedDistrict.innerText = selectElement.value;
+        // displaySelectedDistrict.style.color = "red";
+      };
+      const getWeatherData = () => {
+        // let districtSel = district.selected.value;
+        //   let cityName = cityName.innerText;
+        let key = "da3711b723f694ec77142d83dc922bc8";
         let wetherURL = `
-        https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}
-        `
-        const fetchData = async()=> {
-            let response = await fetch(wetherURL)
-            let convertedResponse = await response.json()
-            console.log(convertedResponse)
-            // convertedResponse.map((eachItem)=> {
-            //     console.log(eachItem.name)
-            // })
-        }
-        const displaySelectedDistrict = ()=> {
-            district = selectedDistrict.innerText
-            // selectedDistrict.innerText = district.innerText
-        }
-        
+        https://api.openweathermap.org/data/2.5/weather?q=${districtSel}&appid=${key}
+        `;
 
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "310px";
-        }
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-        function dropDown() {
-            document.getElementById("myDropdown").classList.toggle("show");
-    }
+        // displaySelectedDistrict.innerText = districtSel;
+        // selectedDistrict.innerText = district.innerText
+      };
+      const fetchData = async () => {
+        let response = await fetch(wetherURL);
+        let convertedResponse = await response.json();
+        console.log(convertedResponse);
+        // convertedResponse.map((eachItem)=> {
+        //     console.log(eachItem.name)
+        // })
+      };
 
-        function filterFunction() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            div = document.getElementById("myDropdown");
-            span = div.getElementsByTagName("span");
-            for (i = 0; i < span.length; i++) {
-                txtValue = span[i].textContent || span[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                span[i].style.display = "";
-                } else {
-                span[i].style.display = "none";
-                }
-            }
-            }
-
-        // fetchData()
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "310px";
+      }
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      function dropDown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
 
 
+      // fetchData()
 
+      // const getWeatherData = async ()=> {
+      //     let collectedData = await fetch(endpoint)
+      //     let convertedCollectedData = await collectedData.json()
+      //     console.log(convertedCollectedData);
+      //     for (let index = 0; index < convertedCollectedData.length; index++) {
+      //         input.value += `
+      //         ${convertedCollectedData[index].dt}
+      //         `
+      //     console.log(collectedData)
+      //     }
+      // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // const getWeatherData = async ()=> {
-        //     let collectedData = await fetch(endpoint)
-        //     let convertedCollectedData = await collectedData.json()
-        //     console.log(convertedCollectedData);
-        //     for (let index = 0; index < convertedCollectedData.length; index++) {
-        //         input.value += `
-        //         ${convertedCollectedData[index].dt}
-        //         `
-        //     console.log(collectedData)
-        //     }
-        // }
- 
-        function darkMode() {
+      function darkMode() {
         var element = document.body;
         if (optionButt.innerText == "Dark Mode") {
-            optionButt.innerText ="Day Mode"
-        }else {
-            optionButt.innerText ="Dark Mode"
+          optionButt.innerText = "Day Mode";
+        } else {
+          optionButt.innerText = "Dark Mode";
         }
         element.classList.toggle("dark-mode");
-        }
-
-
+      }
     </script>
-    
-</body>
+  </body>
 </html>
