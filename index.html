@@ -75,6 +75,7 @@
           </form>
           <button
             class="btn btn-success form-control mt-3"
+            onclick="fetchWeatherData()"
           >
             Get Data
           </button>
@@ -174,28 +175,22 @@
       const getDestrict = () => {
         let selectElement = document.getElementById("districtSel");
         displaySelectedDistrict.innerText = selectElement.value;
-        displaySelectedDistrict.style.color = "red";
       };
-      const getWeatherData = () => {
-        // let districtSel = district.selected.value;
-        //   let cityName = cityName.innerText;
+
+      const fetchWeatherData = async () => {
         let key = "da3711b723f694ec77142d83dc922bc8";
         let wetherURL = `
         https://api.openweathermap.org/data/2.5/weather?q=${districtSel}&appid=${key}
         `;
-
-        // displaySelectedDistrict.innerText = districtSel;
-        // selectedDistrict.innerText = district.innerText
-      };
-      const fetchData = async () => {
+        
         let response = await fetch(wetherURL);
         let convertedResponse = await response.json();
         console.log(convertedResponse);
         // convertedResponse.map((eachItem)=> {
-        //     console.log(eachItem.name)
-        // })
-      };
-
+          //     console.log(eachItem.name)
+          // })
+        };
+        
       function openNav() {
         document.getElementById("mySidenav").style.width = "310px";
       }
@@ -206,6 +201,16 @@
         document.getElementById("myDropdown").classList.toggle("show");
       }
 
+
+
+
+      
+      // const getWeatherData = () => {
+      //   let key = "da3711b723f694ec77142d83dc922bc8";
+      //   let wetherURL = `
+      //   https://api.openweathermap.org/data/2.5/weather?q=${districtSel}&appid=${key}
+      //   `;
+      // };
 
       // fetchData()
 

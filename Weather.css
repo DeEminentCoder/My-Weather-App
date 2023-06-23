@@ -1,109 +1,110 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    /* outline: 1px solid gold; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid gold; */
 }
 
 .dark-mode {
-    background-color: black;
+  background-color: black;
 }
 .dark-mode-two {
-    background-image: none;
+  background-image: none;
 }
 
 #primaryContainer {
-    /* background-image: url(1w.jpg);
+  /* background-image: url(1w.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed; */
-    border-bottom: 10px solid rgba(19,181,240);
-    border-bottom-left-radius: 70px;
-    border-bottom-right-radius: 70px;
-    filter: drop-shadow(0px 0px 10px rgba(71, 126, 210, 0.291));
+  border-bottom: 10px solid rgba(19, 181, 240);
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  filter: drop-shadow(0px 0px 10px rgba(71, 126, 210, 0.291));
 }
 
 #topBar {
-    background-image:url(./Icons/ff.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url(./Icons/ff.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111111d5;
-    border-right: 1px solid white;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111111d5;
+  border-right: 1px solid white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
 .sidenav a {
-padding: 10px 8px 8px 32px;
-text-decoration: none;
-font-size: 25px;
-color: rgb(240, 19, 19);
-display: block;
-transition: 0.3s;
+  padding: 10px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(240, 19, 19);
+  display: block;
+  transition: 0.3s;
 }
 
 .sidenav a:hover {
-color: #f1f1f1;
+  color: #f1f1f1;
 }
 
 .sidenav .closebtn {
-position: absolute;
-top: 0;
-right: 10px;
-font-size: 36px;
-margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 .dropbtn {
-background-color: rgba(19,181,240);
-color: white;
-padding: 5px 130px 5px 80px;
-font-size: 16px;
+  background-color: rgba(19, 181, 240);
+  color: white;
+  padding: 5px 130px 5px 80px;
+  font-size: 16px;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-background-color: #13b5f0;
-color: #ffffff;
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #13b5f0;
+  color: #ffffff;
 }
 
 #selectedDistrict {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .select-something {
-    border-radius: 10px;
-    margin-bottom: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 #myForm select {
-    background-color: rgba(0, 0, 0, 0.086);
-    color: white;
+  background-color: rgba(0, 0, 0, 0.086);
+  color: white;
 }
 #myForm option {
-    background-color: rgba(0, 0, 0, 0.086);
-    /* margin-left: 20px; */
-    color: white;
+  background-color: rgba(0, 0, 0, 0.086);
+  /* margin-left: 20px; */
+  color: white;
 }
 
 #myInput {
-box-sizing: border-box;
-background-image: url('./bootstrap-icons-1.10.3/search.svg');
-background-position: 14px 18px;
-background-repeat: no-repeat;
-font-size: 16px;
-padding: 14px 20px 12px 45px;
+  box-sizing: border-box;
+  background-image: url("./bootstrap-icons-1.10.3/search.svg");
+  background-position: 14px 18px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
 }
 
 .dropdown {
@@ -131,61 +132,63 @@ padding: 14px 20px 12px 45px;
 }
 
 .dropdown span:hover {
-    background-color: #11b1eb2e;
+  background-color: #11b1eb2e;
 }
 
-.show {display: block;}
+.show {
+  display: block;
+}
 
 #weatherImg {
-    filter: drop-shadow(10px 10px 30px #02c4ff71);
+  filter: drop-shadow(10px 10px 30px #02c4ff71);
 }
 
 #deg {
-    font-family: cursive;
-    font-size: 7em;
-    color: rgb(19,181,240);
-    font-weight:700;
-    /* filter: drop-shadow(2px 2px 2px rgb(255, 234, 0)); */
-    border-radius: 50px;
+  font-family: cursive;
+  font-size: 7em;
+  color: rgb(19, 181, 240);
+  font-weight: 700;
+  /* filter: drop-shadow(2px 2px 2px rgb(255, 234, 0)); */
+  border-radius: 50px;
 }
 
 #deg #icon {
-    font-weight:10;
-    font-family:'Segoe UI',serif;
-    margin-left: -50px;
+  font-weight: 10;
+  font-family: "Segoe UI", serif;
+  margin-left: -50px;
 }
 
 #Thunderstorm {
-    color: rgb(19,181,240);
-    border-radius: 50px;
-    font-size:1em;
+  color: rgb(19, 181, 240);
+  border-radius: 50px;
+  font-size: 1em;
 }
 
 #secondaryContainer {
-    background-image: url(./Icons/ff.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* background-attachment: fixed; */
-    border-radius: 60px;
-    filter: drop-shadow(0px 0px 10px rgba(71, 126, 210, 0.291));
-    /* width: 70px; */
-    /* height: 90px; */
+  background-image: url(./Icons/ff.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  border-radius: 60px;
+  filter: drop-shadow(0px 0px 10px rgba(71, 126, 210, 0.291));
+  /* width: 70px; */
+  /* height: 90px; */
 }
 
 #secondaryContainer #weatherImg {
-    filter: drop-shadow(10px 10px 30px white);
+  filter: drop-shadow(10px 10px 30px white);
 }
 
 #secondaryContainer #deg {
-    font-family: cursive;
-    font-size: 1em;
-    color: rgb(253, 253, 253);
-    font-weight:700;
+  font-family: cursive;
+  font-size: 1em;
+  color: rgb(253, 253, 253);
+  font-weight: 700;
 }
 
 #secondaryContainer #deg #icon {
-    /* font-weight:10; */
-    /* font-family:'Segoe UI',serif; */
-    margin-left: -7px;
+  /* font-weight:10; */
+  /* font-family:'Segoe UI',serif; */
+  margin-left: -7px;
 }
