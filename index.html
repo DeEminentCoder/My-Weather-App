@@ -187,7 +187,6 @@
       };
 
       const fetchWeatherData = async () => {
-        document.getElementById("mySidenav").style.width = "0";
         let key = "da3711b723f694ec77142d83dc922bc8";
         let wetherURL = `
         https://api.openweathermap.org/data/2.5/weather?q=${displaySelectedDistrict.value}&appid=${key}
@@ -201,6 +200,7 @@
         humidity.innerText = convertedResponse.main.humidity;
         pressure.innerText = convertedResponse.main.pressure;
         degContent.innerText = ` ${Math.round (convertedResponse.main.temp - 273.15)}°`
+        document.getElementById("mySidenav").style.width = "0";
       };
 
       const onInputFunction = () => {
