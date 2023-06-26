@@ -118,7 +118,7 @@
         <!-- <div id="weatherImg" class="mt-4">
           <img src="./Icons/ss.gif" alt="" width="230px" />
         </div> -->
-        <div id="deg" class="my-5 mx-4 py-5">
+        <div id="deg" class="deg my-4 mx- py-5">
           <span id="degContent" class="">00°</span>
           <span id="icon">c</span>
         </div>
@@ -128,31 +128,19 @@
     <center class="row mx-0 py-3 container-fluid">
       <div class="col-3 container-fluid">
         <div id="secondaryContainer" class="p-2">
-          <strong class="text-white">USA</strong>
+          <strong class="text-white">Lat</strong>
           <div id="weatherImg" class="">
             <img src="./Icons/weather-icon.svg" alt="" width="30px" />
           </div>
           <div id="deg" class="mt-2">
-            <span class="">00°</span>
+            <span  class="">00°</span>
             <span id="icon"></span>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div id="secondaryContainer" class="p-2">
-          <strong class="text-white">GER</strong>
-          <div id="weatherImg" class="">
-            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
-          </div>
-          <div id="deg" class="mt-2">
-            <span class="">21°</span>
-            <span id="icon"></span>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div id="secondaryContainer" class="p-2">
-          <strong class="text-white">RUS</strong>
+          <strong class="text-white">Lon</strong>
           <div id="weatherImg" class="">
             <img src="./Icons/weather-icon.svg" alt="" width="30px" />
           </div>
@@ -164,7 +152,19 @@
       </div>
       <div class="col-3">
         <div id="secondaryContainer" class="p-2">
-          <strong class="text-white">JAP</strong>
+          <strong class="text-white">RH</strong>
+          <div id="weatherImg" class="">
+            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
+          </div>
+          <div id="deg" class="mt-2">
+            <span class="">21°</span>
+            <span id="icon"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div id="secondaryContainer" class="p-2">
+          <strong class="text-white">P.</strong>
           <div id="weatherImg" class="">
             <img src="./Icons/weather-icon.svg" alt="" width="30px" />
           </div>
@@ -201,7 +201,7 @@
 
       const onInputFunction = () => {
         clearTimeout(timeoutId);
-        timeoutId = setTimeout(fetchWeatherData, 3000);
+        timeoutId = setTimeout(fetchWeatherData, 1000);
       };
 
       function openNav() {
@@ -213,7 +213,6 @@
       function dropDown() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
-
 
       // fetchData()
 
