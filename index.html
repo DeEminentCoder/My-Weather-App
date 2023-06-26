@@ -118,9 +118,11 @@
         <!-- <div id="weatherImg" class="mt-4">
           <img src="./Icons/ss.gif" alt="" width="230px" />
         </div> -->
-        <div id="deg" class="deg my-2 mx- py-5">
+        <div id="deg" class="deg my-2 mx- py-2">
+          <p id="cityName" class="text-white fs-1 display-6"></p>
           <span id="degContent" class="">00°</span>
-          <span id="icon">c</span>
+          <span id="">c</span>
+          <p id="countryName" class="text-white fs-1 display-6"></p>
         </div>
         <p id="weatherDescribtion" class="shadow mb-4 mx-5 display-6 py-2" >No Description</p>
       </div>
@@ -189,7 +191,7 @@
       const fetchWeatherData = async () => {
         let key = "da3711b723f694ec77142d83dc922bc8";
         let selectElement = document.getElementById("districtSel");
-        displaySelectedDistrict.value 
+        // displaySelectedDistrict.value
         let wetherURL = `
         https://api.openweathermap.org/data/2.5/weather?q=${displaySelectedDistrict.value}&appid=${key}
         `;
@@ -201,8 +203,12 @@
         lon.innerText = convertedResponse.coord.lon;
         humidity.innerText = convertedResponse.main.humidity;
         pressure.innerText = convertedResponse.main.pressure;
+        countryName.innerText = convertedResponse.sys.country;
+        cityName.innerText = convertedResponse.name;
         degContent.innerText = ` ${Math.round (convertedResponse.main.temp - 273.15)}°`
         document.getElementById("mySidenav").style.width = "0";
+        getDestrict()
+        displaySelectedDistrict.value
       };
 
       const onInputFunction = () => {
