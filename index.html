@@ -118,7 +118,7 @@
         <!-- <div id="weatherImg" class="mt-4">
           <img src="./Icons/ss.gif" alt="" width="230px" />
         </div> -->
-        <div id="deg" class="deg my-4 mx- py-5">
+        <div id="deg" class="deg my-2 mx- py-5">
           <span id="degContent" class="">00°</span>
           <span id="icon">c</span>
         </div>
@@ -126,50 +126,50 @@
       </div>
     </center>
     <center class="row mx-0 py-3 container-fluid">
-      <div class="col-3 container-fluid">
+      <div class="col-6">
         <div id="secondaryContainer" class="p-2">
           <strong class="text-white">Lat</strong>
           <div id="weatherImg" class="">
-            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
+            <!-- <img src="./Icons/weather-icon.svg" alt="" width="30px" /> -->
           </div>
           <div id="deg" class="mt-2">
-            <span id=""  class="">00°</span>
+            <span id="lat"  class="">00°</span>
             <span id="icon"></span>
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-6">
         <div id="secondaryContainer" class="p-2">
           <strong class="text-white">Lon</strong>
           <div id="weatherImg" class="">
-            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
+            <!-- <img src="./Icons/weather-icon.svg" alt="" width="30px" /> -->
           </div>
           <div id="deg" class="mt-2">
-            <span class="">21°</span>
+            <span id="lon" class="">00°</span>
             <span id="icon"></span>
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-6 mt-2">
         <div id="secondaryContainer" class="p-2">
           <strong class="text-white">RH</strong>
           <div id="weatherImg" class="">
-            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
+            <!-- <img src="./Icons/weather-icon.svg" alt="" width="30px" /> -->
           </div>
           <div id="deg" class="mt-2">
-            <span class="">21°</span>
+            <span id="humidity" class="">00°</span>
             <span id="icon"></span>
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-6 mt-2">
         <div id="secondaryContainer" class="p-2">
           <strong class="text-white">P.</strong>
           <div id="weatherImg" class="">
-            <img src="./Icons/weather-icon.svg" alt="" width="30px" />
+            <!-- <img src="./Icons/weather-icon.svg" alt="" width="30px" /> -->
           </div>
           <div id="deg" class="mt-2">
-            <span class="">21°</span>
+            <span id="pressure" class="">00°</span>
             <span id="icon"></span>
           </div>
         </div>
@@ -196,6 +196,8 @@
         let convertedResponse = await response.json();
         console.log(convertedResponse);
         weatherDescribtion.innerText = convertedResponse.weather[0].description;
+        lat.innerText = convertedResponse.coord.lat;
+        lon.innerText = convertedResponse.coord.lon;
         degContent.innerText = ` ${Math.round (convertedResponse.main.temp - 273.15)}°`
       };
 
