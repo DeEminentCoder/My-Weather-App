@@ -5,6 +5,14 @@
   /* outline: 1px solid gold; */
 }
 
+#deg {
+  background-image: url(./Icons/ss.gif);
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* background-attachment: fixed; */
+}
+
 .dark-mode {
   background-color: black;
 }
@@ -39,7 +47,7 @@
   top: 0;
   left: 0;
   background-color: #111111d5;
-  border-right: 1px solid white;
+  /* border-right: 10px solid white; */
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -79,8 +87,9 @@
   color: #ffffff;
 }
 
-#selectedDistrict {
+#displaySelectedDistrict {
   border-radius: 10px;
+  text-align: center;
 }
 
 .select-something {
@@ -148,8 +157,14 @@
   font-size: 7em;
   color: rgb(19, 181, 240);
   font-weight: 700;
-  /* filter: drop-shadow(2px 2px 2px rgb(255, 234, 0)); */
+  filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
   border-radius: 50px;
+}
+
+#degContent {
+  /* background-color: #0000001c; */
+  filter: drop-shadow(2px 2px 2px rgb(252, 252, 252));
+  -webkit-filter: drop-shadow(2px 2px 2px rgb(252, 252, 252));
 }
 
 #deg #icon {
@@ -158,10 +173,11 @@
   margin-left: -50px;
 }
 
-#Thunderstorm {
+#weatherDescribtion {
   color: rgb(19, 181, 240);
   border-radius: 50px;
-  font-size: 1em;
+  font-weight: 500;
+  /* font-size: 1em; */
 }
 
 #secondaryContainer {

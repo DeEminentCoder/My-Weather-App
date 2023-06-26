@@ -107,17 +107,22 @@
             Dark Mode
           </div>
         </div>
-        <div class="mt-1 shadow border text-primary mx- p-2 display-6">
-          <b id="displaySelectedDistrict">Ogbomoso</b>
+        <input
+          oninput="onInputFunction()"
+          type="text"
+          id="displaySelectedDistrict"
+          placeholder="Enter City/District name"
+          class="mt-2 shadow border text-primary mx- p-2 display-6 w-100"
+        />
+
+        <!-- <div id="weatherImg" class="mt-4">
+          <img src="./Icons/ss.gif" alt="" width="230px" />
+        </div> -->
+        <div id="deg" class="my-5 mx-4 py-5">
+          <span id="degContent" class="">00°</span>
+          <span id="icon">c</span>
         </div>
-        <div id="weatherImg" class="mt-4">
-          <img src="./Icons/weather-icon.svg" alt="" width="230px" />
-        </div>
-        <div id="deg" class="mt-5">
-          <span id="degContent" class="">21°</span>
-          <span id="icon"></span>
-        </div>
-        <p id="Thunderstorm" class="shadow mb-4 mx-5">Thunderstorm</p>
+        <p id="weatherDescribtion" class="shadow mb-4 mx-5 display-6 py-2" >No Description</p>
       </div>
     </center>
     <center class="row mx-0 py-3 container-fluid">
@@ -128,7 +133,7 @@
             <img src="./Icons/weather-icon.svg" alt="" width="30px" />
           </div>
           <div id="deg" class="mt-2">
-            <span class="">21°</span>
+            <span class="">00°</span>
             <span id="icon"></span>
           </div>
         </div>
@@ -172,25 +177,33 @@
     </center>
 
     <script>
+      let timeoutId; // Global variable to store the timeout ID
+      let selectElement = document.getElementById("districtSel");
+      displaySelectedDistrict.value = selectElement.value;
+
       const getDestrict = () => {
         let selectElement = document.getElementById("districtSel");
-        displaySelectedDistrict.innerText = selectElement.value;
+        displaySelectedDistrict.value = selectElement.value;
       };
 
       const fetchWeatherData = async () => {
+        document.getElementById("mySidenav").style.width = "0";
         let key = "da3711b723f694ec77142d83dc922bc8";
         let wetherURL = `
-        https://api.openweathermap.org/data/2.5/weather?q=${districtSel}&appid=${key}
+        https://api.openweathermap.org/data/2.5/weather?q=${displaySelectedDistrict.value}&appid=${key}
         `;
-        
         let response = await fetch(wetherURL);
         let convertedResponse = await response.json();
         console.log(convertedResponse);
-        // convertedResponse.map((eachItem)=> {
-          //     console.log(eachItem.name)
-          // })
-        };
-        
+        weatherDescribtion.innerText = convertedResponse.weather[0].description;
+        degContent.innerText = ` ${Math.round (convertedResponse.main.temp - 273.15)}°`
+      };
+
+      const onInputFunction = () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(fetchWeatherData, 3000);
+      };
+
       function openNav() {
         document.getElementById("mySidenav").style.width = "310px";
       }
@@ -201,16 +214,6 @@
         document.getElementById("myDropdown").classList.toggle("show");
       }
 
-
-
-
-      
-      // const getWeatherData = () => {
-      //   let key = "da3711b723f694ec77142d83dc922bc8";
-      //   let wetherURL = `
-      //   https://api.openweathermap.org/data/2.5/weather?q=${districtSel}&appid=${key}
-      //   `;
-      // };
 
       // fetchData()
 
