@@ -118,10 +118,10 @@
         <!-- <div id="weatherImg" class="mt-4">
           <img src="./Icons/ss.gif" alt="" width="230px" />
         </div> -->
-        <div id="deg" class="deg my-2 mx- py-2">
+        <div id="deg" class="deg my-2 mx- py-2 px-">
           <p id="cityName" class="text-white fs-1 display-6"></p>
           <span id="degContent" class="">00°</span>
-          <span id="">c</span>
+          <!-- <span id="" class="">c</span> -->
           <p id="countryName" class="text-white fs-1 display-6"></p>
         </div>
         <p id="weatherDescribtion" class="shadow mb-4 mx-5 display-6 py-2" >No Description</p>
@@ -205,7 +205,7 @@
         pressure.innerText = convertedResponse.main.pressure;
         countryName.innerText = convertedResponse.sys.country;
         cityName.innerText = convertedResponse.name;
-        degContent.innerText = ` ${Math.round (convertedResponse.main.temp - 273.15)}°`
+        degContent.innerText = ` ${Math.round (convertedResponse.main.temp - 273.15)}°c`
         document.getElementById("mySidenav").style.width = "0";
         getDestrict()
         displaySelectedDistrict.value
