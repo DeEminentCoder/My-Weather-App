@@ -14,7 +14,7 @@
   <body>
     <div id="mySidenav" class="sidenav">
       <div class="dropdown ms-2">
-        <button class="dropbtn btn mb-2">SIMOZY ©️</button>
+        <button class="dropbtn btn mb-2">SIMOZY©️</button>
         <div id="myDropdown" class="dropdown-content">
           <!-- <input type="text" class="form-control border" placeholder="Quick Search..." id="myInput" onkeyup="filterFunction()"> -->
 
@@ -198,6 +198,8 @@
         weatherDescribtion.innerText = convertedResponse.weather[0].description;
         lat.innerText = convertedResponse.coord.lat;
         lon.innerText = convertedResponse.coord.lon;
+        humidity.innerText = convertedResponse.main.humidity;
+        pressure.innerText = convertedResponse.main.pressure;
         degContent.innerText = ` ${Math.round (convertedResponse.main.temp - 273.15)}°`
       };
 
@@ -207,7 +209,7 @@
       };
 
       function openNav() {
-        document.getElementById("mySidenav").style.width = "310px";
+        document.getElementById("mySidenav").style.width = "390px";
       }
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
