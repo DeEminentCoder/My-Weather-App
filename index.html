@@ -206,9 +206,9 @@
         countryName.innerText = convertedResponse.sys.country;
         cityName.innerText = convertedResponse.name;
         degContent.innerText = ` ${Math.round (convertedResponse.main.temp - 273.15)}°c`
-        document.getElementById("mySidenav").style.width = "0";
         getDestrict()
         displaySelectedDistrict.value
+        document.getElementById("mySidenav").style.width = "0";
       };
 
       const onInputFunction = () => {
@@ -226,20 +226,7 @@
         document.getElementById("myDropdown").classList.toggle("show");
       }
 
-      // fetchData()
-
-      // const getWeatherData = async ()=> {
-      //     let collectedData = await fetch(endpoint)
-      //     let convertedCollectedData = await collectedData.json()
-      //     console.log(convertedCollectedData);
-      //     for (let index = 0; index < convertedCollectedData.length; index++) {
-      //         input.value += `
-      //         ${convertedCollectedData[index].dt}
-      //         `
-      //     console.log(collectedData)
-      //     }
-      // }
-
+      
       function darkMode() {
         var element = document.body;
         if (optionButt.innerText == "Dark Mode") {
